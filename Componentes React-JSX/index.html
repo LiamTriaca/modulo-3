@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Componentes con React + JSX</title>
+</head>
+<h1>Componentes con React + JSX	</h1>
+<body>
+	<div id="app"> </div>
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  	<script type="text/babel">
+  		class Saludo extends React.Component {
+  			
+  			saludar (){
+			alert(`Espero que tu ${this.props.dia} termine bien!`)
+
+		}
+
+  			render (){
+  				return <blockquote onClick= {this.saludar.bind(this)}> Hola {this.props.dia} </blockquote>
+  				
+  			}
+  		}
+
+  		
+
+  		ReactDOM.render( 
+  		[<Saludo dia="Martes"/>,
+  		 <Saludo dia="Jueves"/>,
+  		 <Saludo dia="Sabado"/>], document.querySelector("#app"))
+  	</script>
+
+</body>
+</html>
